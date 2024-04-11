@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<!-- SEÇÃO DE CABEÇALHO-->
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css" />
+    <link rel="stylesheet" href="./cardapio.css" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
+    <title>Shoppingfood Hamburguer</title>
+</head>
+
+<body>
+    <!-- SEÇÃO DE MENU-->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">
+                <div class="logo">
+                    <img src="./image/logoHamburguer.png" alt="" />
+                    <h3>Shoppingfood</h3>
+                </div>
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav list-menu">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#">Menu</a>
+                    </li>
+                    <!-- <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                            data-bs-toggle="dropdown" aria-expanded="false">
+                            Categoria
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="#categoria-hamburguer">Hambúrguer</a></li>
+                            <li><a class="dropdown-item" href="#categoria-pizza">Pizza</a></li>
+                            <li><a class="dropdown-item" href="#categoria-bebida">Bebida</a></li>
+                        </ul>
+                    </li> -->
+                    <li class="nav-item">
+                        <a class="nav-link" href="#contatos">Contato</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://www.instagram.com/digitalpacheco/" target="_blank"><i
+                                class="bi bi-instagram"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://leopachecof.github.io/portifolio/" target="_blank"><i
+                                class="bi bi-globe2"></i></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#carrinho"><i class="bi bi-cart2"></i><span class="cart-count"
+                                id="cart-count">vazio</span></i></a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- SEÇÃO DE LANCHES-->
+    <section class="cardapio" id="cardapio">
+        <div class="accordion" id="accordionExample" style="max-width: 90%">
+
+            <!-- Categoria: Hambúrguer -->
+            <div class="categoria" id="categoria-hamburguer">
+                <div class="card">
+                    <div class="card-header" id="headingHamburguer">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseHamburguer" aria-expanded="true" aria-controls="collapseHamburguer">
+                                <!-- <h3>Hambúrguer</h3> -->
+                                <img src="./image/categoria_sanduiche.png" alt="" style="max-width: 50rem">
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseHamburguer" class="collapse" aria-labelledby="headingHamburguer"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+
+                            <!-- Produto 1 -->
+                            <div class="card mb-3" style="max-width: 500px">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center">
+                                        <img src="./image/hamb-1.png" class="img-fluid rounded-start" alt="..." />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">X-Bacon</h5>
+                                            <p class="card-text">
+                                                Duas carnes, bacon, queijo cheddar, molho especial e salada.
+                                            </p>
+                                            <p class="card-price">R$ 25.00</p>
+                                            <!-- Preço do produto -->
+                                            <button type="button" class="btn btn-success mx-auto">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Produto 2 -->
+                            <div class="card mb-3" style="max-width: 500px">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center">
+                                        <img src="./image/hamb-2.png" class="img-fluid rounded-start" alt="..." />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">X-Egg</h5>
+                                            <p class="card-text">
+                                                Duas carnes, bacon, queijo cheddar, molho especial e salada.
+                                            </p>
+                                            <p class="card-price">R$ 35.00</p>
+                                            <!-- Preço do produto -->
+                                            <button type="button" class="btn btn-success mx-auto">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Produto 3 -->
+                            <div class="card mb-3" style="max-width: 500px">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center">
+                                        <img src="./image/hamb-3.png" class="img-fluid rounded-start" alt="..." />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">X-tudo</h5>
+                                            <p class="card-text">
+                                                Duas carnes, bacon, queijo cheddar, molho especial e salada.
+                                            </p>
+                                            <p class="card-price">R$ 15.00</p>
+                                            <!-- Preço do produto -->
+                                            <button type="button" class="btn btn-success mx-auto">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria: Pizza -->
+            <div class="categoria" id="categoria-pizza">
+                <div class="card">
+                    <div class="card-header" id="headingPizza">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapsePizza" aria-expanded="true" aria-controls="collapsePizza">
+                                <!-- Pizza -->
+                                <img src="./image/categoria_pizza.png" alt="" style="max-width: 50rem">
+                            
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapsePizza" class="collapse" aria-labelledby="headingPizza"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+
+                            <!-- Produto 1 -->
+                            <div class="card mb-3" style="max-width: 500px">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center">
+                                        <img src="./image/pizza-1.png" class="img-fluid rounded-start" alt="..." />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Pizza Portuguesa</h5>
+                                            <p class="card-text">
+                                                Mussarela, ovo, tomate, pimentão, presunto e oregano.
+                                            </p>
+                                            <p class="card-price">R$ 25.00</p>
+                                            <!-- Preço do produto -->
+                                            <button type="button" class="btn btn-success mx-auto">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Produto 2 -->
+                            <div class="card mb-3" style="max-width: 500px">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center">
+                                        <img src="./image/pizza-2.png" class="img-fluid rounded-start" alt="..." />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Pizza Brigadeiro com Morango</h5>
+                                            <p class="card-text">
+                                                Chocolate brigadeiro e pedaços de morango.
+                                            </p>
+                                            <p class="card-price">R$ 35.00</p>
+                                            <!-- Preço do produto -->
+                                            <button type="button" class="btn btn-success mx-auto">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Produto 3 -->
+                            <div class="card mb-3" style="max-width: 500px">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center">
+                                        <img src="./image/pizza-3.png" class="img-fluid rounded-start" alt="..." />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Pizza Portuguesa</h5>
+                                            <p class="card-text">
+                                                Mussarela, linguiça calabresa e cebola.
+                                            </p>
+                                            <p class="card-price">R$ 15.00</p>
+                                            <!-- Preço do produto -->
+                                            <button type="button" class="btn btn-success mx-auto">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Categoria: Bebida -->
+            <div class="categoria" id="categoria-bebida">
+                <div class="card">
+                    <div class="card-header" id="headingBebida">
+                        <h2 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse"
+                                data-target="#collapseBebida" aria-expanded="true" aria-controls="collapseBebida">
+                                <!-- Bebidas -->
+                                <img src="./image/categoria_bebida.png" alt="" style="max-width: 50rem">
+                            </button>
+                        </h2>
+                    </div>
+
+                    <div id="collapseBebida" class="collapse" aria-labelledby="headingBebida"
+                        data-parent="#accordionExample">
+                        <div class="card-body">
+
+                            <!-- Produto 1 -->
+                            <div class="card mb-3" style="max-width: 500px">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center">
+                                        <img src="./image/bebida-1.png" class="img-fluid rounded-start" alt="..." />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Refrigerante Lata 330ml</h5>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <p class="card-price">R$ 6.00</p>
+                                            <button type="button" class="btn btn-success mx-auto">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Produto 2 -->
+                            <div class="card mb-3" style="max-width: 500px">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center">
+                                        <img src="./image/bebida-2.png" class="img-fluid rounded-start" alt="..." />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Refrigerante 1,5 L</h5>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <p class="card-price">R$ 15.00</p>
+                                            <button type="button" class="btn btn-success mx-auto">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Produto 3 -->
+                            <div class="card mb-3" style="max-width: 500px">
+                                <div class="row g-0">
+                                    <div class="col-md-4 d-flex align-items-center">
+                                        <img src="./image/bebida-3.png" class="img-fluid rounded-start" alt="..." />
+                                    </div>
+                                    <div class="col-md-8">
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">Guaravita</h5>
+                                            <p class="card-text">
+
+                                            </p>
+                                            <p class="card-price">R$ 5.00</p>
+                                            <button type="button" class="btn btn-success mx-auto">
+                                                Adicionar ao Carrinho
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CARRINHO DE COMPRAS -->
+    <section class="carrinho" id="carrinho">
+        <div class="card-carrinho">
+            <h3>Carrinho de Compras</h3>
+            <div class="btn-carrinho">
+                <div class="lista-carrinho">
+                    <div class="divNomeProduto"></div>
+                    <div class="divPrecoTotal"></div>
+                    <div class="divBotoes"></div>
+                </div>
+            </div>
+            <p id="total">Total: R$ 0.00</p>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE CHECKOUT -->
+    <section class="checkout1" id="checkout1">
+        <div class="card mb-3">
+
+            <div class="categoria" id="categoria-hamburguer">
+                <p>Fechar Pedido</p>
+                <!-- card branco -->
+                <div class="card mb-3">
+
+                    <section class="checkout" id="checkout">
+                        <div class="card-checkout">
+                            <!-- <h1>Checkout</h1> -->
+                            <form id="checkout-form">
+                                <label for="nome">Nome:<span class="required">*</span></label>
+                                <input type="text" id="nome" name="nome" required>
+
+                                <label for="endereco">Endereço:<span class="required">*</span></label>
+                                <input type="text" id="endereco" name="endereco" required>
+
+                                <label for="referencia">Ponto de Referência:</label>
+                                <input type="text" id="referencia" name="referencia">
+
+                                <label for="pagamento">Forma de Pagamento:<span class="required">*</span></label>
+                                <select name="pagamento" id="pagamento" required>
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="Dinheiro">Dinheiro</option>
+                                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                                    <option value="Cartão de Débito">Cartão de Débito</option>
+                                    <option value="PIX">Pix</option>
+                                </select>
+
+                                <div class="form-group" id="trocoField" style="display: none;">
+                                    <label for="troco">Troco para:</label>
+                                    <input type="text" id="troco" name="troco">
+                                </div>
+
+                                <!-- //////////////////////////////////////////////////////////Início de Forma de Entrega -->
+                                <!-- Início de Forma de Entrega -->
+                                
+                                <!-- Campo de opção de entrega -->
+                                <label for="opcaoentrega">Opção de Entrega:</label>
+                                <select name="opcaoentrega" id="opcaoentrega" required>
+                                    <option value="">Selecione uma opção</option>
+                                    <option value="retirada">Retirada na Loja</option>
+                                    <option value="entrega">Entrega</option>
+                                </select>
+
+                                <!-- Campo de endereço da loja -->
+                                <div class="form-group" id="enderecoloja" style="display: none;">
+                                    <label for="endereco">Endereço da Loja: Rua Exemplo, 123 - Bairro - Cidade</label>
+                                    <input type="text" id="troco" name="troco">
+                                </div>
+
+                                <!-- Campo de taxa de entrega -->
+                                <div class="form-group" id="taxaentrega" style="display: none;">
+                                    <label for="taxaentrega">Taxa de Entrega: R$ <span id="valortaxaentrega">5.00</span></label>
+                                </div>
+                                <!-- Fim de Forma de Entrega -->
+
+                                <!--//////////////////////////////////////////////////////// Fim de Forma de Entrega -->
+
+
+                                <label for="observacao">Observação:</label><br>
+                                <textarea id="observacao" name="observacao" rows="4" cols="50" maxlength="200"></textarea><br><br>
+
+                                <div class="checkout-final">
+                                    <button class="btn-finalizar-compra" id="finalizar-compra">
+                                        Fazer Pedido
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </section>
+                </div>
+            </div>
+    </section>
+
+    <!-- SEÇÃO DE CONTATOS -->
+    <section class="contatos" id="contatos">
+        <h3>Contatos</h3>
+        <div class="contatos-secao">
+            <a class="bi bi-whatsapp"
+                href="https://api.whatsapp.com/send?phone=5521970129970&text=Ol%C3%A1%20tudo%20bem?%20Digite%20sua%20mensagem."
+                target="_blank"><span>(21) 97012-9970</span></a>
+            <a class="bi bi-instagram" href="https://www.instagram.com/digitalpacheco/"
+                target="_blank"><span>@digitalpacheco</span></a>
+            <a class="bi bi-globe2" href="https://leopachecof.github.io/portifolio/"
+                target="_blank"><span>site</span></a>
+        </div>
+    </section>
+
+    <!-- SEÇÃO DE RODAPÉ -->
+    <footer>
+        <h4>Desenvolvido por digitalpacheco®</h4>
+    </footer>
+
+    <script src="./script.js"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+</html>
