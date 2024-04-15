@@ -146,6 +146,11 @@ html {
 .card-body img{
     width: 200px;
 }
+.card-body h4{
+    color: rgba(143, 143, 143, 0.899);
+    font-style: italic;
+    font-size:medium;
+}
 .card-body button{
     width: 50%;
     padding: 10px;
