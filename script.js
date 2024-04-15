@@ -70,7 +70,7 @@ if (opcaoEntregaSelecionada === "entrega") {
     }
 
     // Constrói a mensagem do WhatsApp
-    const mensagem = `*Pedido Nº: ${numeroPedido}*\n\n${new Date().toLocaleString("pt-BR")}\n===========================\n\n*Nome:* ${nomeCliente}\n*Endereço:* ${enderecoCliente}\n\n*Produtos:*\n${produtos}\n\n===========================\n*Observação:* ${observacao}\n===========================\n*Subtotal:* R$ ${subtotal.toFixed(2)}\n${opcaoEntregaSelecionada === "entrega" ? `*Taxa de Entrega:* R$ ${taxaEntrega.toFixed(2)}\n` : ""}*Forma de pagamento:* ${formaPagamento}${troco ? " - Troco para: " + troco : ""}\n*Total:* R$ ${total.toFixed(2)}`;
+    const mensagem = `*Pedido Nº: ${numeroPedido}*\n\n${new Date().toLocaleString("pt-BR")}\n----------------------------------------------\n\n*Nome:* ${nomeCliente}\n*Endereço:* ${enderecoCliente}\n\n*Produtos:*\n${produtos}\n\n----------------------------------------------\n*Observação:* ${observacao}\n----------------------------------------------\n\n*Subtotal:* R$ ${subtotal.toFixed(2)}\n${opcaoEntregaSelecionada === "entrega" ? `*Taxa de Entrega:* R$ ${taxaEntrega.toFixed(2)}\n` : ""}*Forma de pagamento:* ${formaPagamento}${troco ? " - Troco para: " + troco : ""}\n*Total:* R$ ${total.toFixed(2)}`;
 
     // Incrementa o número do pedido para o próximo pedido e salva no localStorage
     localStorage.setItem("numeroPedido", parseInt(numeroPedido) + 1);
@@ -145,11 +145,13 @@ function atualizarCarrinho() {
         tr.appendChild(botoesTd);
 
         listaCarrinho.appendChild(tr);
+
         total += item.preco * item.quantidade;
     }
 
     totalElement.textContent = `Total: R$ ${total.toFixed(2)}`;
 }
+
 
 // Função auxiliar para criar botões
 function criarBotao(texto, onClick) {
@@ -159,6 +161,7 @@ function criarBotao(texto, onClick) {
     botao.addEventListener('click', onClick);
     return botao;
 }
+
 
 // Função para atualizar a contagem de itens no carrinho
 function atualizarContagemCarrinho() {
