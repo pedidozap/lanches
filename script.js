@@ -35,14 +35,33 @@ function finalizarCompra() {
     return;
   }
 
+  // Verifica se todos os campos obrigatórios do formulário foram preenchidos
+  const nomeCliente = document.getElementById("nome").value;
+  const enderecoCliente = document.getElementById("endereco").value;
+  const formaPagamento = document.getElementById("pagamento").value;
+  const opcaoEntregaSelecionada = document.getElementById("opcaoentrega").value;
+  const bairroSelecionado = document.getElementById("bairro").value;
+
+ // Verifica se a opção de entrega é selecionada e, caso selecionada, se o bairro também foi preenchido
+ if (opcaoEntregaSelecionada === "entrega" && !bairroSelecionado) {
+  alert("Por favor, selecione um bairro para entrega.");
+  return;
+}
+
+if (!nomeCliente || !enderecoCliente || !formaPagamento || !opcaoEntregaSelecionada) {
+  alert("Por favor, preencha todos os campos obrigatórios.");
+  return;
+}
+
+if (opcaoEntregaSelecionada === "entrega" && !bairroSelecionado) {
+  alert("Por favor, selecione um bairro para entrega.");
+  return;
+}
+
   // Obtém o número do pedido ou define como 1 se não existir
   let numeroPedido = localStorage.getItem("numeroPedido") || 1;
 
   // Gera os dados do pedido
-  const nomeCliente = document.getElementById("nome").value;
-  const enderecoCliente = document.getElementById("endereco").value;
-  const bairroSelecionado = document.getElementById("bairro").value;
-  const formaPagamento = document.getElementById("pagamento").value;
   const troco = document.getElementById("troco").value;
   const produtos = Object.entries(carrinho)
     .map(([nome, item]) => {
@@ -52,12 +71,10 @@ function finalizarCompra() {
     })
     .join("\n");
   const observacao = document.getElementById("observacao").value;
-  const opcaoEntregaSelecionada = document.getElementById("opcaoentrega").value;
   let taxaEntrega = 0; // Inicializa a taxa de entrega como zero
 
   // Verifica se a opção de entrega é selecionada e obtém a taxa de entrega
   if (opcaoEntregaSelecionada === "entrega") {
-    const bairroSelecionado = document.getElementById("bairro").value;
     taxaEntrega = taxasEntregaPorBairro[bairroSelecionado] || 0; // Obtém a taxa de entrega do objeto de taxas por bairro
   }
 
@@ -70,22 +87,36 @@ function finalizarCompra() {
     total += taxaEntrega;
   }
 
-  // Constrói a mensagem do WhatsApp
-  const mensagem = `*Pedido Nº: ${numeroPedido}*\n\n${new Date().toLocaleString(
-    "pt-BR"
-  )}\n----------------------------------------------\n\n*Nome:* ${nomeCliente}\n${
-    opcaoEntregaSelecionada === "retirada"
-      ? "*Opção de Entrega:* Retirada na Loja"
-      : `*Endereço:* ${enderecoCliente}\n*Bairro:* ${bairroSelecionado}`
-  }\n\n*Produtos:*\n${produtos}\n\n----------------------------------------------\n*Observação:* ${observacao}\n----------------------------------------------\n\n*Subtotal:* R$ ${subtotal.toFixed(
-    2
-  )}\n${
-    opcaoEntregaSelecionada === "entrega"
-      ? `*Taxa de Entrega:* R$ ${taxaEntrega.toFixed(2)}\n`
-      : ""
-  }*Forma de pagamento:* ${formaPagamento}${
-    troco ? " - Troco para: " + troco : ""
-  }\n*Total:* R$ ${total.toFixed(2)}`;
+
+  // Adiciona taxa para pagamento com cartão de débito ou crédito
+  if (formaPagamento === "Cartão de Débito" || formaPagamento === "Cartão de Crédito") {
+    total += 2.00;
+    // mensagem += "\n*Forma de Pagamento:* Cartão de Débito/Crédito - *Taxa:* R$ 2.00";
+  }
+
+// Constrói a mensagem do WhatsApp
+let mensagem = `*Pedido Nº: ${numeroPedido}*\n\n${new Date().toLocaleString(
+  "pt-BR"
+)}\n----------------------------------------------\n\n*Nome:* ${nomeCliente}\n${
+  opcaoEntregaSelecionada === "retirada"
+    ? "*Opção de Entrega:* Retirada na Loja"
+    : `*Endereço:* ${enderecoCliente}\n*Bairro:* ${bairroSelecionado}`
+}\n\n*Produtos:*\n${produtos}\n\n----------------------------------------------\n*Observação:* ${observacao}\n----------------------------------------------\n\n*Subtotal:* R$ ${subtotal.toFixed(
+  2
+)}\n${
+  opcaoEntregaSelecionada === "entrega"
+    ? `*Taxa de Entrega:* R$ ${taxaEntrega.toFixed(2)}\n`
+    : ""
+}*Forma de pagamento:* ${formaPagamento}${
+  formaPagamento === "Dinheiro" && troco ? `\n*Troco para:* R$` + troco : ""
+}\n${
+  formaPagamento === "Cartão de Débito" || formaPagamento === "Cartão de Crédito"
+    ? "*Taxa de cartão:* R$ 2.00\n"
+    : ""
+}*Total:* R$ ${total.toFixed(2)}`;
+
+
+
 
   // Incrementa o número do pedido para o próximo pedido e salva no localStorage
   localStorage.setItem("numeroPedido", parseInt(numeroPedido) + 1);
@@ -188,13 +219,8 @@ function atualizarContagemCarrinho() {
     totalCount += item.quantidade;
   }
 
-  if (totalCount === 0) {
-    cartCountElement.textContent = "vazio";
-  } else if (totalCount === 1) {
-    cartCountElement.textContent = "1 item";
-  } else {
-    cartCountElement.textContent = totalCount + " itens";
-  }
+  // Atualiza o elemento com o número total de itens no carrinho
+  cartCountElement.textContent = totalCount.toString();
 }
 
 // Adiciona ouvintes de evento para cada botão "Adicionar ao Carrinho"
@@ -293,3 +319,18 @@ document.getElementById("bairro").addEventListener("change", function () {
     taxaEntregaSpan.textContent = "0.00"; // Se não houver taxa definida, exibe 0.00
   }
 });
+
+
+// Adiciona ouvinte de evento para o campo de seleção de pagamento
+document.getElementById("pagamento").addEventListener("change", function () {
+  const divTroco = document.getElementById("trocoField");
+  divTroco.style.display = this.value === "Dinheiro" ? "block" : "none";
+
+  const divAcrescimoCartao = document.getElementById("acrescimoCartao");
+  if (this.value === "Cartão de Crédito" || this.value === "Cartão de Débito") {
+    divAcrescimoCartao.style.display = "block";
+  } else {
+    divAcrescimoCartao.style.display = "none";
+  }
+});
+

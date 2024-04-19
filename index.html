@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous" />
     <title>Shoppingfood Hamburguer</title>
+
 </head>
 
 <body>
@@ -23,6 +24,10 @@
                     <h3>Shoppingfood</h3>
                 </div>
             </a>
+            <a class="icon_cart_dois" href="#carrinho">
+                <i class="bi bi-cart2 cart-icon-menu"></i>
+                <span class="cart-count" id="cart-count">0</span>
+            </a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -32,17 +37,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Menu</a>
                     </li>
-                    <!-- <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                            data-bs-toggle="dropdown" aria-expanded="false">
-                            Categoria
-                        </a>
-                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#categoria-hamburguer">Hambúrguer</a></li>
-                            <li><a class="dropdown-item" href="#categoria-pizza">Pizza</a></li>
-                            <li><a class="dropdown-item" href="#categoria-bebida">Bebida</a></li>
-                        </ul>
-                    </li> -->
                     <li class="nav-item">
                         <a class="nav-link" href="#contatos">Contato</a>
                     </li>
@@ -54,14 +48,11 @@
                         <a class="nav-link" href="https://leopachecof.github.io/portifolio/" target="_blank"><i
                                 class="bi bi-globe2"></i></a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#carrinho"><i class="bi bi-cart2"></i><span class="cart-count"
-                                id="cart-count">vazio</span></i></a>
-                    </li>
                 </ul>
             </div>
         </div>
     </nav>
+    
 
     <!-- SEÇÃO DE LANCHES-->
     <section class="cardapio" id="cardapio">
@@ -400,11 +391,17 @@
                             <input type="text" id="troco" name="troco">
                         </div>
 
+                        <div id="acrescimoCartao" style="display: none; font-style: italic; color: red; font-size: smaller;">
+                            Compras pelo Cartão terá um acréscimo de: R$ 2,00
+                        </div><br>
+                        
+                          
+
                         <!-- //////////////////////////////////////////////////////////Início de Forma de Entrega -->
                         <!-- Início de Forma de Entrega -->
 
                         <!-- Campo de opção de entrega -->
-                        <label for="opcaoentrega">Opção de Entrega:</label>
+                        <label for="opcaoentrega">Opção de Entrega:<span class="required">*</span></label>
                         <select name="opcaoentrega" id="opcaoentrega" required>
                             <option value="">Selecione uma opção</option>
                             <option value="retirada">Retirada na Loja</option>
@@ -419,7 +416,7 @@
                         <!-- Campo de seleção de bairro para entrega -->
                         <div class="form-group" id="selecionebairro" style="display: none;">
                             <label for="bairro">Selecione o Bairro:</label>
-                            <select name="bairro" id="bairro">
+                            <select name="bairro" id="bairro" required>
                                 <option value="">Selecione o bairro</option>
                                 <option value="Centro">Centro</option>
                                 <option value="Bairro A">Bairro A</option>
@@ -472,6 +469,7 @@
     <footer>
         <h4>Desenvolvido por digitalpacheco®</h4>
     </footer>
+
 
     <script src="./script.js"></script>
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>

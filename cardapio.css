@@ -35,6 +35,43 @@ html {
 .navbar-brand{
     width: 20%;
 }
+
+/* CARRINHO 2*/
+
+/* Estilo para a contagem de itens no carrinho no menu */
+.cart-count {
+    background-color: red;
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    font-size: 15px;
+    width: 25px;
+    height: 25px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon_cart_dois {
+    text-decoration: none;
+    color: white;
+    margin-left: 10px; /* Adiciona um espaçamento entre o ícone e o texto */
+    display: flex;
+    align-items: center;
+}
+
+/* Ajusta o tamanho do ícone */
+.icon_cart_dois i {
+    font-size: 24px; /* Ajuste o tamanho do ícone conforme necessário */
+    margin-right: 5px;
+}
+
+
+/* CARRINHO 2*/
+
+
+
+
 /* Menu do Toggler */
 .navbar-collapse{
     display: flex;
@@ -139,6 +176,13 @@ html {
     font-weight: bold;
     color: #049521;
     margin-top: 10px;
+}
+.card .btn {
+    background-color: #46a54c;
+}
+.card .btn:hover,
+.card .btn:active {
+    background-color: #16581b;
 }
 .img-fluid {
     width: 20rem;
@@ -275,8 +319,9 @@ html {
     cursor: pointer;
     transition: background-color 0.3s ease-in-out;
 }
-#finalizar-compra:hover {
-    background-color: #2f7b34;
+#finalizar-compra:hover,
+#finalizar-compra:active {
+    background-color: #16581b;
 }
 .checkout-final{
     display: flex;
