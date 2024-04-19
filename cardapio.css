@@ -33,7 +33,7 @@ html {
     z-index: 1000; /* Ajusta a ordem de empilhamento */
 }
 .navbar-brand{
-    width: 20%;
+    width: 30%;
 }
 
 /* CARRINHO 2*/
@@ -191,10 +191,6 @@ html {
 
 .categoria {
     transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-}
-
-.categoria:hover {
-    transform: scale(1.1);
 }
 
 .img-fluid {
