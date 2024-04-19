@@ -177,13 +177,26 @@ html {
     color: #049521;
     margin-top: 10px;
 }
-.card .btn {
+.card-body.btn {
     background-color: #46a54c;
 }
-.card .btn:hover,
-.card .btn:active {
+.card-body .btn:hover {
     background-color: #16581b;
+    
 }
+.card-body .btn:active {
+    transform: scale(1.1);
+}
+
+
+.categoria {
+    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.categoria:hover {
+    transform: scale(1.1);
+}
+
 .img-fluid {
     width: 20rem;
 }
