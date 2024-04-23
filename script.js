@@ -137,7 +137,7 @@ let mensagem = `*Pedido Nº: ${numeroPedido}*\n\n${new Date().toLocaleString(
   window.location.href = "index.html";
 }
 
-// Função para limpar o carrinho
+// Função para limpar o carrinho //
 function limparCarrinho() {
   for (const nome in carrinho) {
     delete carrinho[nome];
@@ -226,9 +226,9 @@ function atualizarContagemCarrinho() {
 // Adiciona ouvintes de evento para cada botão "Adicionar ao Carrinho"
 document.querySelectorAll(".btn-add-to-cart").forEach((botao) => {
   botao.addEventListener("click", () => {
-    const card = botao.closest(".card");
-    const nome = card.querySelector(".title").textContent;
-    const precoTexto = card.querySelector(".price").textContent;
+    const cardSoma = botao.closest(".cardSoma");
+    const nome = cardSoma.querySelector(".title").textContent;
+    const precoTexto = cardSoma.querySelector(".price").textContent;
     const preco = parseFloat(precoTexto.replace("R$ ", ""));
     adicionarAoCarrinho(nome, preco, 1);
   });
