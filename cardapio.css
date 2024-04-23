@@ -17,13 +17,13 @@ html {
     /* justify-content: center; */
     /* width: 100vw; */
     /* height: 100vh; */
-    font-size: 12px;
     /* overflow-x: hidden; */
+    font-size: 12px;
     scroll-behavior: smooth;
     background-color: #1f1e1f;
 }
 
-/* Início NAVBAR */
+/* ******************       INÍCIO NAVBAR */
 .navbar {
     display: flex;
     background-color: #1f1e1f;
@@ -35,9 +35,10 @@ html {
 .navbar-brand{
     width: 30%;
 }
+/* ******************       FIM NAVBAR */
 
-/* CARRINHO 2*/
 
+/* ******************       INÍCIO CARRINHO CENTRALIZADO*/
 /* Estilo para a contagem de itens no carrinho no menu */
 .cart-count {
     background-color: red;
@@ -59,20 +60,17 @@ html {
     display: flex;
     align-items: center;
 }
-
 /* Ajusta o tamanho do ícone */
 .icon_cart_dois i {
     font-size: 24px; /* Ajuste o tamanho do ícone conforme necessário */
     margin-right: 5px;
 }
-
-
-/* CARRINHO 2*/
+/* ******************        FIM CARRINHO CENTRALIZADO*/
 
 
 
 
-/* Menu do Toggler */
+/* ******************       INÍCIO Menu do Toggler */
 .navbar-collapse{
     display: flex;
     width: 70%; /*margem da direita*/
@@ -128,16 +126,16 @@ html {
 .dropdown:hover ul {
     display: block;
 }
-/* Fim NAVBAR */
+/* ******************       FIM Menu do Toggler */
 
-/* início CATEGORIA - Divisão de categorias no body */
+/* ******************       INÍCIO CATEGORIA - Divisão de categorias no body */
 .categoria {
     min-width: 20vw;
     max-width: 90vw;
     background-color: rgb(241, 241, 239);
     border-radius: 3px;
-    padding: 3px;
-    margin: 5px;
+    /* padding: 3px; */
+    /* margin: 5px; */
 }
 .categoria p {
     color: #3f3f3f;
@@ -146,10 +144,11 @@ html {
 .categoria img{
     width: 100%;
 }
-/* fim CATEGORIA */
+/* ******************        fim CATEGORIA */
 
-/* Início CARDÁPIO */
-.cardapio {
+/* ******************        Início CARDÁPIO */
+
+.cardapio{                  /* ajusta os cards centralizado */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -159,58 +158,100 @@ html {
 }
 .card {
     box-shadow: 1px 1px 5px rgba(69, 69, 69, 0.449);
+    width: 600px;
+    height: 150px; /* Altura ajustada */
+    margin-bottom: 20px; /* Espaço entre os cards */
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
 }
-.card h5 {
-    font-size: 2rem;
-    color: #3f3f3f;
-    text-align: start;
+.card img {
+    width: 100%;
+    height: auto; /* Mantém a proporção */
 }
-.card p {
-    font-size: 1.6rem;
-    color: #3f3f3f;
-    text-align: start;
-    margin-top: 10px;
+.card .card-body2 {
+    padding: 10px;
+    flex: 1; /* Faz a div expandir para preencher o espaço disponível */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between; /* Alinha os itens verticalmente */
 }
-.card .card-price {
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: #049521;
-    margin-top: 10px;
-}
-.card-body.btn {
-    background-color: #46a54c;
-}
-.card-body .btn:hover {
-    background-color: #16581b;
+
+
+
+
+
+.card-body2 .col {
+    /* background-color: #f1e94b;  */
+    display: flex;
+    flex-direction: column;
+    margin: 80px 20px 10px 20px;
     
 }
-.card-body .btn:active {
+
+.card-body2 .col .img-fluid {
+    width: 100%; /* Defina uma largura fixa */
+    height: auto; /* Mantém a proporção */
+    max-width: 100%; /* Garante que a imagem não ultrapasse a largura da div */
+}
+
+.card-body2 .row {
+    display: flex;
+    flex-wrap: nowrap; /* Evita que os itens quebrem linha */
+}
+
+
+
+
+
+
+.card-body2 .col button {
+    margin-bottom: 10px; /* Move o botão para a parte inferior */
+    align-self: center; /* Centraliza verticalmente */
+    width: 70%; /* Largura do botão */
+}
+.card-body2 .col .btn {
+    width: 80%;
+    padding: 10px;
+    font-size: 1.4rem;
+}
+.card-body2 .btn {
+    background-color: #46a54c;
+}
+.card-body2 .btn:hover {
+    background-color: #16581b; 
+}
+.card-body2 .btn:active {
     transform: scale(1.1);
 }
 
 
-.categoria {
-    transition: transform 0.4s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+
+.card-body2 .col .card-price {
+    font-size: 1.6rem;
+    font-weight: bold;
+    color: #049521;
+    margin-bottom: 10px;
+}
+.card-body2 .col h5 {
+    font-size: 1.8rem;
+    color: #3f3f3f;
+    margin-bottom: 10px;
+}
+.card-body2 .col p {
+    font-size: 1.4rem;
+    color: #3f3f3f;
+    margin-bottom: 10px;
 }
 
-.img-fluid {
-    width: 20rem;
-}
-.card-body img{
-    width: 200px;
-}
-.card-body h4{
-    color: rgba(143, 143, 143, 0.899);
-    font-style: italic;
-    font-size:medium;
-}
-.card-body button{
-    width: 50%;
-    padding: 10px;
-    font-size:medium;
-}
 
-/* Fim CARDÁPIO */
+
+
+
+/* ******************        Fim CARDÁPIO */
 
 
 /* início CARRINHO*/
@@ -390,26 +431,152 @@ footer {
 /* RESPONSIVIDADE */
 
 @media (max-width: 760px) {
-    /* .card-body {
-        justify-items: center;
-        display: grid;
-    } */
-    .card-body .img-fluid{
+    .card-body2 {
         justify-items: center;
         display: grid;
     }
-    .card-body img {
+    .card-body2 .img-fluid{
+        justify-items: center;
+        display: flex;
+    }
+    .card-body2 img {
         margin: auto;
     }
-    .card-body h5{
+    .card-body2 h5{
         text-align: center;
     }
-    .card-body p{
+    .card-body2 p{
         text-align: center;
     }
-    .card-body button{
+    .card-body2 button{
         width: 80%;
         padding: 10px;
         font-size: large;
     }
+}
+
+
+/* novo card */
+.cardProduto {
+    width: auto;
+    height: auto;
+    max-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-img {
+    width: 30%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-info {
+    width: 70%;
+    height: 100%;
+    padding: 0 10px;
+}
+
+.title {
+    font-size: 16px;
+    margin-bottom: 5px;
+}
+
+.description {
+    font-size: 11px;
+    font-style: italic;
+    margin-bottom: 5px;
+}
+
+.price {
+    font-size: 16px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.product-info .price {
+    color: #46a54c;
+    margin: 5px;
+}
+
+.btn-add-to-cart {
+    width: 80%;
+    padding: 8px 0;
+    background-color: #46a54c;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+.btn-add-to-cart:hover {
+    background-color: #26902f;
+}
+.btn-add-to-cart:active {
+    background-color: #7f857f;
+    transform: scale(1.1);
+}
+
+
+/* novo card Multiplo*/
+.cardProdutoMultplos {
+    width: auto;
+    height: auto;
+    max-height: 150px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    overflow: hidden;
+}
+
+.product-img-multiplo {
+    width: 20%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.product-img img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.product-info-multiplo {
+    width: 40%;
+    height: 100%;
+}
+.multiplo {
+    width: 30%;
+}
+.multiplo p {
+    font-size: 12px;
+    font-style: italic;
+}
+.multiplo .btn{
+    width: 100%;
+    /* color: #fff; */
+    border: none;
+    border-radius: 3px;
+    font-size: 12px;
+    cursor: pointer;
+}
+
+.multiplo .btn:hover {
+    background-color: #26902f;
+}
+.multiplo .btn:active {
+    background-color: #7f857f;
+    transform: scale(1.1);
 }

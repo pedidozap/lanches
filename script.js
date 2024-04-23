@@ -224,11 +224,11 @@ function atualizarContagemCarrinho() {
 }
 
 // Adiciona ouvintes de evento para cada botão "Adicionar ao Carrinho"
-document.querySelectorAll(".btn-success").forEach((botao) => {
+document.querySelectorAll(".btn-add-to-cart").forEach((botao) => {
   botao.addEventListener("click", () => {
     const card = botao.closest(".card");
-    const nome = card.querySelector(".card-title").textContent;
-    const precoTexto = card.querySelector(".card-price").textContent;
+    const nome = card.querySelector(".title").textContent;
+    const precoTexto = card.querySelector(".price").textContent;
     const preco = parseFloat(precoTexto.replace("R$ ", ""));
     adicionarAoCarrinho(nome, preco, 1);
   });
@@ -334,3 +334,47 @@ document.getElementById("pagamento").addEventListener("change", function () {
   }
 });
 
+
+// Define o dia da semana que aparece a promoção
+document.addEventListener("DOMContentLoaded", function() {
+  var currentDate = new Date();
+  var currentDayOfWeek = currentDate.getDay(); // 0 para Domingo, 1 para Segunda, ..., 6 para Sábado
+
+  // Se for quarta-feira (dia 3), mostra a categoria de promoção de quarta-feira
+  if (currentDayOfWeek === 1) {
+      document.querySelector(".promoSeg").style.display = "block";
+  } else {
+      // Se não for quarta-feira, esconde a categoria de promoção de quarta-feira
+      document.querySelector(".promoSeg").style.display = "none";
+  }
+});
+
+
+// Define o dia da semana que aparece a promoção
+document.addEventListener("DOMContentLoaded", function() {
+  var currentDate = new Date();
+  var currentDayOfWeek = currentDate.getDay(); // 0 para Domingo, 1 para Segunda, ..., 6 para Sábado
+
+  // Se for quarta-feira (dia 3), mostra a categoria de promoção de quarta-feira
+  if (currentDayOfWeek === 2) {
+      document.querySelector(".promoTer").style.display = "block";
+  } else {
+      // Se não for quarta-feira, esconde a categoria de promoção de quarta-feira
+      document.querySelector(".promoTer").style.display = "none";
+  }
+});
+
+
+// Define o dia da semana que aparece a promoção
+document.addEventListener("DOMContentLoaded", function() {
+  var currentDate = new Date();
+  var currentDayOfWeek = currentDate.getDay(); // 0 para Domingo, 1 para Segunda, ..., 6 para Sábado
+
+  // Se for quarta-feira (dia 3), mostra a categoria de promoção de quarta-feira
+  if (currentDayOfWeek === 3) {
+      document.querySelector(".promoQua").style.display = "block";
+  } else {
+      // Se não for quarta-feira, esconde a categoria de promoção de quarta-feira
+      document.querySelector(".promoQua").style.display = "none";
+  }
+});
