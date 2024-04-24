@@ -38,7 +38,7 @@ html {
 /* ******************       FIM NAVBAR */
 
 
-/* ******************       INÍCIO CARRINHO CENTRALIZADO*/
+/* ******************       INÍCIO ÍCONE DE CARRINHO DA NAVBAR CENTRALIZADO*/
 /* Estilo para a contagem de itens no carrinho no menu */
 .cart-count {
     background-color: red;
@@ -130,17 +130,17 @@ html {
 
 /* ******************       INÍCIO CATEGORIA - Divisão de categorias no body */
 .categoria {
-    min-width: 20vw;
-    max-width: 90vw;
+    width: 100vw;
+    max-width: 600px;
     background-color: rgb(241, 241, 239);
     border-radius: 3px;
     /* padding: 3px; */
     /* margin: 5px; */
 }
-.categoria p {
+/* .categoria p {
     color: #3f3f3f;
     margin-left: 10px;
-}
+} */
 .categoria img{
     width: 100%;
 }
@@ -154,30 +154,21 @@ html {
     align-items: center;
     padding-top: 12vh;
     background-color: rgb(237, 238, 230);
-    margin-top: 20px;
+    margin-top: 15px;
+    /* width: 100%; */
 }
-.card {
-    box-shadow: 1px 1px 5px rgba(69, 69, 69, 0.449);
-    width: 600px;
-    height: 150px; /* Altura ajustada */
-    margin-bottom: 20px; /* Espaço entre os cards */
-    border: 1px solid #ccc;
-    border-radius: 5px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
-}
-.card img {
+
+/* .card img {
     width: 100%;
-    height: auto; /* Mantém a proporção */
-}
-.card .card-body2 {
+    height: auto;
+} */
+/* .card .card-body2 {
+    flex: 1; 
     padding: 10px;
-    flex: 1; /* Faz a div expandir para preencher o espaço disponível */
     display: flex;
     flex-direction: column;
-    justify-content: space-between; /* Alinha os itens verticalmente */
-}
+    justify-content: space-between;
+} */
 
 
 
@@ -263,9 +254,9 @@ html {
     
 }
 .card-carrinho{
-    width: 70rem;
-    max-width: 820px;
-    margin: 15px;
+    width: 100vw;
+    max-width: 600px;
+    margin: 15px 0;
     padding: 10px;
     background-color: rgb(241, 241, 239);
     border-radius: 3px;
@@ -312,11 +303,11 @@ html {
     /* width: auto; */
 }
 .checkout-form{
-    width: 820px;
+    width: 100vw;
+    max-width: 600px;
     display: grid;
     justify-content: center;
     font-size: 1.6rem;
-    margin: 10px;
     padding: 20px;
     background-color: rgb(241, 241, 239);
     border-radius: 3px;
@@ -430,7 +421,7 @@ footer {
 
 /* RESPONSIVIDADE */
 
-@media (max-width: 760px) {
+/* @media (max-width: 760px) {
     .card-body2 {
         justify-items: center;
         display: grid;
@@ -453,7 +444,7 @@ footer {
         padding: 10px;
         font-size: large;
     }
-}
+} */
 
 
 /* novo card */
@@ -467,6 +458,7 @@ footer {
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
+    padding: 8px;
 }
 
 .product-img {
@@ -532,13 +524,14 @@ footer {
 .cardProdutoMultplos {
     width: auto;
     height: auto;
-    max-height: 150px;
+    max-height: 250px;
     display: flex;
     align-items: center;
     justify-content: center;
     border: 1px solid #ccc;
     border-radius: 5px;
     overflow: hidden;
+    
 }
 
 .product-img-multiplo {
@@ -549,9 +542,9 @@ footer {
 
 .product-img img {
     width: 100%;
-    height: auto;
     display: block;
-}
+    /* transform: scale(1.2);  */
+  }
 
 .product-info-multiplo {
     width: 40%;
@@ -566,9 +559,8 @@ footer {
 }
 .multiplo .btn{
     width: 100%;
-    /* color: #fff; */
     border: none;
-    border-radius: 3px;
+    border-radius: 6px;
     font-size: 12px;
     cursor: pointer;
 }

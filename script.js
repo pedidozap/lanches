@@ -340,7 +340,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var currentDate = new Date();
   var currentDayOfWeek = currentDate.getDay(); // 0 para Domingo, 1 para Segunda, ..., 6 para Sábado
 
-  // Se for quarta-feira (dia 3), mostra a categoria de promoção de quarta-feira
+  // SEGUNDA
   if (currentDayOfWeek === 1) {
       document.querySelector(".promoSeg").style.display = "block";
   } else {
@@ -355,7 +355,7 @@ document.addEventListener("DOMContentLoaded", function() {
   var currentDate = new Date();
   var currentDayOfWeek = currentDate.getDay(); // 0 para Domingo, 1 para Segunda, ..., 6 para Sábado
 
-  // Se for quarta-feira (dia 3), mostra a categoria de promoção de quarta-feira
+  // TERÇA
   if (currentDayOfWeek === 2) {
       document.querySelector(".promoTer").style.display = "block";
   } else {
@@ -370,11 +370,39 @@ document.addEventListener("DOMContentLoaded", function() {
   var currentDate = new Date();
   var currentDayOfWeek = currentDate.getDay(); // 0 para Domingo, 1 para Segunda, ..., 6 para Sábado
 
-  // Se for quarta-feira (dia 3), mostra a categoria de promoção de quarta-feira
+  // QUARTA
   if (currentDayOfWeek === 3) {
       document.querySelector(".promoQua").style.display = "block";
   } else {
       // Se não for quarta-feira, esconde a categoria de promoção de quarta-feira
       document.querySelector(".promoQua").style.display = "none";
+  }
+});
+
+// Define o dia da semana que aparece a promoção
+document.addEventListener("DOMContentLoaded", function() {
+  var currentDate = new Date();
+  var currentDayOfWeek = currentDate.getDay(); // 0 para Domingo, 1 para Segunda, ..., 6 para Sábado
+
+  // QUINTA
+  if (currentDayOfWeek === 4) {
+      document.querySelector(".promoQui").style.display = "block";
+  } else {
+      // Se não for quarta-feira, esconde a categoria de promoção de quarta-feira
+      document.querySelector(".promoQui").style.display = "none";
+  }
+});
+
+// Define o dia da semana que aparece a promoção
+document.addEventListener("DOMContentLoaded", function() {
+  var currentDate = new Date();
+  var currentDayOfWeek = currentDate.getDay(); // 0 para Domingo, 1 para Segunda, ..., 6 para Sábado
+
+  // SEXTA
+  if (currentDayOfWeek === 5) {
+      document.querySelector(".promoSex").style.display = "block";
+  } else {
+      // Se não for quarta-feira, esconde a categoria de promoção de quarta-feira
+      document.querySelector(".promoSex").style.display = "none";
   }
 });
